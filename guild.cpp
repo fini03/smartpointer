@@ -1,6 +1,7 @@
 #include"license.h"
 #include"guild.h"
 #include"person.h"
+using namespace std;
 
 Guild::Guild(std::string name, unsigned int fee, unsigned int sal, const std::vector<shared_ptr<Person>>& mem) : name{name}, fee{fee}, salary{sal} {
 	if(name.empty()) {
