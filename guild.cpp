@@ -58,7 +58,7 @@ void Guild::grant_license(std::string n) {
 		}
 	}
 	if(!found) {
-			throw std::runtime_error("This person is not a guildmember!\n");
+		throw std::runtime_error("This person is not a guildmember!\n");
 	}
 }
 bool Guild::offer_job(shared_ptr<Person> p) const {
