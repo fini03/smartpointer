@@ -1,7 +1,7 @@
 #include"license.h"
 #include"guild.h"
 #include"person.h"
-using namespace std;
+
 Guild::Guild(std::string name, unsigned int fee, unsigned int sal, const std::vector<shared_ptr<Person>>& mem) : name{name}, fee{fee}, salary{sal} {
 	if(name.empty()) {
 		throw std::runtime_error("Name is empty!\n");	
@@ -26,22 +26,22 @@ Guild::Guild(std::string name, unsigned int fee, unsigned int sal, const std::ve
 }
 bool Guild::add_member(shared_ptr<Person> p) {
 	for(const auto& m : members) {
-    if(m.second == p) {
-      return false;
+    		if(m.second == p) {
+      			return false;
 		}
-  }
+  	}
 	//members[name] = p;
 	members.insert(pair<const std::string, shared_ptr<Person>> {p->get_name(), p});
 	return true;
 }
 bool Guild::remove_member(std::string n) {
 	for(const auto& m : members) {
-    if(m.first == n) {
-      members.erase(n);
-    	return true;
-    }
-  }
-  return false;
+    		if(m.first == n) {
+      			members.erase(n);
+    			return true;
+    		}
+  	}
+	return false;
 }
 void Guild::grant_license(std::string n) {
 	bool found{false};
